@@ -109,7 +109,7 @@ carouselNextBtn.addEventListener(
 );
 
 /*slidebar*/
-function bar() {
+rangevalue.oninput = function bar() {
   let getvalue = rangevalue.value;
   setvalue.innerHTML = this.value;
 
@@ -163,7 +163,7 @@ function bar() {
     );
   }
 };
-// bar();
+bar();
 
 /*grid section*/
 for (let tab of tabs) {
