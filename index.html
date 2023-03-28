@@ -19,6 +19,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css" />
   </head>
 
@@ -78,33 +80,53 @@
     <main>
       <section id="banner">
         <div class="syw-container">
-        <div class="syw-header-content">
-          <h1>Slim Your Wallet</h1>
-          <p>Move the slider to compare wallets</p>
-        </div>
-        <div class="header-below-content">
-          <span>Discover how we do it</span>
-          <div class="scrollTo-arrow"></div>
-        </div>
+          <div class="syw-header-content">
+            <h1>Slim Your Wallet</h1>
+            <p>Move the slider to compare wallets</p>
+          </div>
+          <div class="imagechange">
+            <img class="bgimg" src="./assets/image_part_001.jpg" id="imgchange" />
+          </div>
+
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="1"
+              class="slider-range"
+              id="myRange"
+              oninput="bar()"
+            />
+            <h5 class="txt-left">EMPTY</h5>
+        <h5 class="txt-right">FULL</h5>
+            <p><span id="rangevalue" style="display: none"></span></p>
+          </div>
+          <div class="header-below-content">
+            <span>Discover how we do it</span>
+            <div class="scrollTo-arrow"></div>
+          </div>
         </div>
       </section>
       <section id="brand-promises">
         <div class="brand-promise">
-        <ul>
-          <li class="promises">
-            <img src="./assets/check-mark.png" alt=""/>
-            <span class="promises-text">3 year warranty</span>
-          </li>
-          <li class="promises">
-            <img src="./assets/leather-icon.png" alt=""/>
-            <span class="promises-text">Environmentally certified leather</span>
-          </li>
-          <li class="promises">
-            <img src="./assets/trophy-icon.png" alt=""/>
-            <span class="promises-text">Award-winning service</span>
-          </li>
-        </ul>
-      </div>
+          <ul>
+            <li class="promises">
+              <img src="./assets/check-mark.png" alt="" />
+              <span class="promises-text">3 year warranty</span>
+            </li>
+            <li class="promises">
+              <img src="./assets/leather-icon.png" alt="" />
+              <span class="promises-text"
+                >Environmentally certified leather</span
+              >
+            </li>
+            <li class="promises">
+              <img src="./assets/trophy-icon.png" alt="" />
+              <span class="promises-text">Award-winning service</span>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section id="video-palyer-container">
@@ -1366,69 +1388,66 @@
 
       <section id="caousel-section">
         <div class="carousel-container-box">
-
-         <div class="carousel-container">
-      <div class="carousel">
-        <div class="carousel-item">
-          <img
-            class="logo"
-            src="https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg?auto=format&fit=max"
-            alt="Image 1"
-          />
-          <div class="text">
-            <span
-              >Made from premium, environmentally certified leather, that only
-              gets better with age...</span
-            >
+          <div class="carousel-container">
+            <div class="carousel">
+              <div class="carousel-item">
+                <img
+                  class="logo"
+                  src="https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg?auto=format&fit=max"
+                  alt="Image 1"
+                />
+                <div class="carousal-text">
+                  <span
+                    >Made from premium, environmentally certified leather, that
+                    only gets better with age...</span
+                  >
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="logo"
+                  src="https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg?auto=format&fit=max"
+                  alt="Image 2"
+                />
+                <div class="carousal-text">
+                  <span
+                    >and fewer layers of leather, to eliminate bulk from the
+                    start...</span
+                  >
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="logo"
+                  src="https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg?auto=format&fit=max"
+                  alt="Image 3"
+                />
+                <div class="carousal-text">
+                  <span
+                    >their clever design features help keep them slim, even when
+                    they’re full…</span
+                  >
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="logo"
+                  src="https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg?auto=format&fit=max"
+                  alt="Image 4"
+                />
+                <div class="carousel-text">
+                  <span
+                    >they'll be with you from Day One to Day 1000, and
+                    beyond.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="btn">
+              <button class="prev-btn">&#8249;</button>
+              <button class="next-btn">&#8250;</button>
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            class="logo"
-            src="https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg?auto=format&fit=max"
-            alt="Image 2"
-          />
-          <div class="text">
-            <span
-              >and fewer layers of leather, to eliminate bulk from the
-              start...</span
-            >
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            class="logo"
-            src="https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg?auto=format&fit=max"
-            alt="Image 3"
-          />
-          <div class="text">
-            <span
-              >their clever design features help keep them slim, even when
-              they’re full…</span
-            >
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            class="logo"
-            src="https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg?auto=format&fit=max"
-            alt="Image 4"
-          />
-          <div class="text">
-            <span
-              >they'll be with you from Day One to Day 1000, and beyond.</span
-            >
-          </div>
-        </div>
-     
-      </div>
-      <div class="btn">
-      <button class="prev-btn">&#8249;</button>
-      <button class="next-btn">&#8250;</button>
-    </div>
-    </div>
-      
-
 
           <img
             class="floating-image-coins"
@@ -1464,8 +1483,7 @@
           </div>
 
           <div class="productTabs">
-
-            <div class="productTabs__tabs" data-tab-id="1" >
+            <div class="productTabs__tabs" data-tab-id="1">
               <div class="productcontent">
                 <div class="productContent__image">
                   <img src="./assets/image-1.avif" width="120px" alt="" />
@@ -1477,7 +1495,7 @@
               </div>
             </div>
 
-            <div class="productTabs__tabs" data-tab-id="2" >
+            <div class="productTabs__tabs" data-tab-id="2">
               <div class="productcontent">
                 <div class="productTabs__image2">
                   <img src="./assets/image-2.avif" width="120px" alt="" />
@@ -1489,7 +1507,7 @@
               </div>
             </div>
 
-            <div class="productTabs__tabs" data-tab-id="3" >
+            <div class="productTabs__tabs" data-tab-id="3">
               <div class="productcontent">
                 <div class="productTabs__image3">
                   <img src="./assets/image-3.avif" width="120px" alt="" />
@@ -1500,7 +1518,6 @@
                 <div class="productarrow"></div>
               </div>
             </div>
-
           </div>
 
           <div class="productTabs__content">
@@ -1561,9 +1578,7 @@
                 />
                 <h3>
                   Flip Case
-                  <span class="ProductFilter"
-                    >Second Edition</span
-                  >
+                  <span class="ProductFilter">Second Edition</span>
                 </h3>
                 <div class="price">$89</div>
                 <div class="viewProduct if-not-mobile">
@@ -1594,9 +1609,7 @@
                 />
                 <h3>
                   Card Sleeve
-                  <span class="ProductFilter"
-                    >MIRUM® Edition</span
-                  >
+                  <span class="ProductFilter">MIRUM® Edition</span>
                 </h3>
                 <div class="price">$75</div>
                 <div class="viewProduct if-not-mobile">
@@ -1605,7 +1618,10 @@
               </div>
             </div>
 
-            <div class="productStylesGrid productStylesGrid-2" style="display: none">
+            <div
+              class="productStylesGrid productStylesGrid-2"
+              style="display: none"
+            >
               <div class="item-1">
                 <span class="item-1a">CLOSE X</span>
                 <img
@@ -1615,9 +1631,7 @@
                 />
                 <h3>
                   Apex Slim Sleeve
-                  <span class="ProductFilter"
-                    >RFID Safe</span
-                  >
+                  <span class="ProductFilter">RFID Safe</span>
                 </h3>
                 <div class="price">$129</div>
                 <div class="viewProduct if-not-mobile">
@@ -1649,9 +1663,7 @@
                 <h3>Minimalist Set</h3>
                 <div class="price">
                   $103
-                  <span class="ProductFilter"
-                    >Valued at $128</span
-                  >
+                  <span class="ProductFilter">Valued at $128</span>
                 </div>
                 <div class="viewProduct if-not-mobile">
                   <div class="viewProduct__button">Shop now</div>
@@ -1686,9 +1698,7 @@
                 />
                 <h3>
                   Slim Sleeve
-                  <span class="ProductFilter"
-                    >Premium Edition</span
-                  >
+                  <span class="ProductFilter">Premium Edition</span>
                 </h3>
                 <div class="price">$115</div>
                 <div class="viewProduct if-not-mobile">
@@ -1705,9 +1715,7 @@
                 />
                 <h3>
                   Slim Sleeve
-                  <span class="ProductFilter"
-                    >MIRUM® Edition</span
-                  >
+                  <span class="ProductFilter">MIRUM® Edition</span>
                 </h3>
                 <div class="price">$65</div>
                 <div class="viewProduct if-not-mobile">
@@ -1716,7 +1724,10 @@
               </div>
             </div>
 
-            <div class="productStylesGrid productStylesGrid-3"  style="display: none">
+            <div
+              class="productStylesGrid productStylesGrid-3"
+              style="display: none"
+            >
               <div class="item-1">
                 <span class="item-1a">CLOSE X</span>
                 <img
@@ -1754,9 +1765,7 @@
                 />
                 <h3>
                   Note Sleeve
-                  <span class="ProductFilter"
-                    >RFID Safe</span
-                  >
+                  <span class="ProductFilter">RFID Safe</span>
                 </h3>
                 <div class="price">$89</div>
                 <div class="viewProduct if-not-mobile">
@@ -1773,9 +1782,7 @@
                 />
                 <h3>
                   Folio Mini
-                  <span class="ProductFilter"
-                    >RFID Safe</span
-                  >
+                  <span class="ProductFilter">RFID Safe</span>
                 </h3>
                 <div class="price">$89</div>
                 <div class="viewProduct if-not-mobile">
@@ -1792,9 +1799,7 @@
                 />
                 <h3>
                   Note Sleeve
-                  <span class="ProductFilter"
-                    >Premium Edition</span
-                  >
+                  <span class="ProductFilter">Premium Edition</span>
                 </h3>
                 <div class="price">$129</div>
                 <div class="viewProduct if-not-mobile">
@@ -1811,9 +1816,7 @@
                 />
                 <h3>
                   Coin Wallet
-                  <span class="ProductFilter"
-                    >RFID Safe</span
-                  >
+                  <span class="ProductFilter">RFID Safe</span>
                 </h3>
                 <div class="price">$99</div>
                 <div class="viewProduct if-not-mobile">
@@ -1831,9 +1834,7 @@
                 <h3>Global City Set</h3>
                 <div class="price">
                   $149
-                  <span class="ProductFilter"
-                    >Valued at $188</span
-                  >
+                  <span class="ProductFilter">Valued at $188</span>
                 </div>
                 <div class="viewProduct if-not-mobile">
                   <div class="viewProduct__button">Shop now</div>
@@ -1850,9 +1851,7 @@
                 <h3>Smooth Pocket Set</h3>
                 <div class="price">
                   $119
-                  <span class="ProductFilter"
-                    >Valued at $148</span
-                  >
+                  <span class="ProductFilter">Valued at $148</span>
                 </div>
                 <div class="viewProduct if-not-mobile">
                   <div class="viewProduct__button">Shop now</div>
@@ -1866,12 +1865,7 @@
                   title="minimalist-set"
                   alt=""
                 />
-                <h3>
-                  Zip Wallet<span
-                    class="ProductFilter"
-                    >RFID Safe</span
-                  >
-                </h3>
+                <h3>Zip Wallet<span class="ProductFilter">RFID Safe</span></h3>
                 <div class="price">$119</div>
                 <div class="viewProduct if-not-mobile">
                   <div class="viewProduct__button">Shop now</div>
@@ -1885,11 +1879,13 @@
       <section class="payment-options">
         <div>
           <h1>Safe, easy payment options</h1>
-          <ul>
-            <li class="visa"><img src="./assets/visa-img.png" /></li>
-            <li class="mastercard"><img src="./assets/mastercard-img.png" /></li>
-            <li class="paypal"><img src="./assets/paypal-img.png" /></li>
-            <li class="apple-pay"><img src="./assets/apple-pay.png" /></li>
+          <ul class="payment-options-list">
+            <li class="visa"><img src="./assets/visa-img.png"  style="padding: 10px;"/></li>
+            <li class="mastercard">
+              <img src="./assets/mastercard-img.png" style="padding: 10px;" />
+            </li>
+            <li class="paypal"><img src="./assets/paypal-img.png" style="padding: 10px;" /></li>
+            <li class="apple-pay"><img src="./assets/apple-pay.png" style="padding: 10px;" /></li>
           </ul>
         </div>
       </section>
@@ -1927,7 +1923,7 @@
               <li>Cookie Policy</li>
             </ul>
           </div>
-          <div class="collapsable-section">
+          <div class="collapsable-section product-list">
             <ul>
               <li>Shop Products</li>
               <li>Wallets</li>
@@ -1941,7 +1937,7 @@
               <li>Key Holders</li>
             </ul>
           </div>
-          <div class="collapsable-section">
+          <div class="collapsable-section product-list">
             <ul>
               <li>Shop Collections</li>
               <li>Releases</li>
@@ -1997,7 +1993,9 @@
               <li>
                 <img src="./assets/tiktok-logo.png" alt="" />
               </li>
-              <li><img src="./assets/wechat-logo.png" alt="" /></li>
+              <li>
+                <img src="./assets/wechat-logo.png" alt="" />
+              </li>
               <li>
                 <img src="./assets/carryology-logo.png" alt="" />
               </li>
@@ -2011,7 +2009,7 @@
               <img
                 loading="lazy"
                 sizes="36px"
-                class="ls-is-cached lazyloaded"
+                class="ls-is-cached lazyloaded1"
                 srcset="
                   https://bellroy-cms-images.imgix.net/2782/b-corporation_w.png?auto=format&amp;fit=max&amp;w=36 36w,
                   https://bellroy-cms-images.imgix.net/2782/b-corporation_w.png?auto=format&amp;fit=max&amp;w=72 72w
@@ -2025,7 +2023,7 @@
                 ><img
                   loading="lazy"
                   sizes="36px"
-                  class="ls-is-cached lazyloaded"
+                  class="ls-is-cached-2 lazyloaded"
                   srcset="
                     https://bellroy-cms-images.imgix.net/6324/GPTW-Logo-2.jpeg?auto=format&amp;fit=max&amp;w=36 36w,
                     https://bellroy-cms-images.imgix.net/6324/GPTW-Logo-2.jpeg?auto=format&amp;fit=max&amp;w=72 72w

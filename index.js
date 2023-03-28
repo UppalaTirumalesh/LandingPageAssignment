@@ -12,24 +12,23 @@ var tabArrows = document.querySelectorAll(".productarrow");
 var tabs = document.querySelectorAll(".productTabs__tabs");
 var tabContent = document.querySelectorAll(".productStylesGrid");
 
+let rangevalue = document.getElementById("myRange");
 
-
+let setvalue = document.getElementById("rangevalue");
+let imgchangevalue = document.getElementById("imgchange");
 
 /* carousel */
-const carouselContainer = document.querySelector('.carousel-container');
-const carousel = carouselContainer.querySelector('.carousel');
-const carouselItems = carouselContainer.querySelectorAll('.carousel-item');
-const carouselPrevBtn = carouselContainer.querySelector('.prev-btn');
-const carouselNextBtn = carouselContainer.querySelector('.next-btn');
-
+const carouselContainer = document.querySelector(".carousel-container");
+const carousel = carouselContainer.querySelector(".carousel");
+const carouselItems = carouselContainer.querySelectorAll(".carousel-item");
+const carouselPrevBtn = carouselContainer.querySelector(".prev-btn");
+const carouselNextBtn = carouselContainer.querySelector(".next-btn");
 
 let slideWidth = carouselItems[0].clientWidth;
 
-
-window.addEventListener('resize', () => {
-    slideWidth = carouselItems[0].clientWidth;
-})
-
+window.addEventListener("resize", () => {
+  slideWidth = carouselItems[0].clientWidth;
+});
 
 let currentIndex = 0;
 const firstSlideClone = carouselItems[0].cloneNode(true);
@@ -44,72 +43,129 @@ carousel.appendChild(secondSlideClone);
 carousel.insertBefore(lastSlideClone, carouselItems[0]);
 // carousel.insertBefore(lastBeforeSlideClone, lastSlideClone);
 
-
-carousel.style.transform = `translateX(-${slideWidth }px)`;
+carousel.style.transform = `translateX(-${slideWidth}px)`;
 const maxIndex = carouselItems.length - 1;
 
 function slideToNextImage() {
-    currentIndex++;
-    console.log(currentIndex);
-    carousel.style.transition = "all .5s ease";
-    carousel.style.transform = `translateX(-${slideWidth *  (currentIndex  + 1 )}px)`;
+  currentIndex++;
+  console.log(currentIndex);
+  carousel.style.transition = "all .5s ease";
+  carousel.style.transform = `translateX(-${
+    slideWidth * (currentIndex + 1)
+  }px)`;
 }
 
 function slideToPreviousImage() {
-    currentIndex--;
-    console.log(currentIndex);
-    carousel.style.transition = "all .5s ease";
-    carousel.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
+  currentIndex--;
+  console.log(currentIndex);
+  carousel.style.transition = "all .5s ease";
+  carousel.style.transform = `translateX(-${
+    slideWidth * (currentIndex + 1)
+  }px)`;
 }
 
 function handleTransitionEnd() {
-    if (currentIndex === carouselItems.length) {
-        currentIndex = 0;
-        carousel.style.transition = "none";
-        carousel.style.transform = `translateX(-${slideWidth }px)`;
-    } else if (currentIndex === -1) {
-        currentIndex = carouselItems.length - 1;
-        carousel.style.transition = "none";
-        carousel.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
-    }
+  if (currentIndex === carouselItems.length) {
+    currentIndex = 0;
+    carousel.style.transition = "none";
+    carousel.style.transform = `translateX(-${slideWidth}px)`;
+  } else if (currentIndex === -1) {
+    currentIndex = carouselItems.length - 1;
+    carousel.style.transition = "none";
+    carousel.style.transform = `translateX(-${
+      slideWidth * (currentIndex + 1)
+    }px)`;
+  }
 }
 
 function throttle(cb, delay) {
-    let wait = false;
-    return (...args) => {
-        if (wait) {
-            return;
-        }
-        cb(...args);
-        wait = true;
-        setTimeout(() => {
-            wait = false;
-        }, delay);
+  let wait = false;
+  return (...args) => {
+    if (wait) {
+      return;
     }
+    cb(...args);
+    wait = true;
+    setTimeout(() => {
+      wait = false;
+    }, delay);
+  };
 }
 
 carousel.addEventListener("transitionend", handleTransitionEnd);
 
+carouselPrevBtn.addEventListener(
+  "click",
+  throttle(() => {
+    slideToPreviousImage();
+  }, 200)
+);
 
-carouselPrevBtn.addEventListener('click', throttle(() => {
-    slideToPreviousImage()
-}, 200));
+carouselNextBtn.addEventListener(
+  "click",
+  throttle(() => {
+    slideToNextImage();
+  }, 200)
+);
 
-carouselNextBtn.addEventListener('click', throttle(() => {
-    slideToNextImage()
-}, 200));
+/*slidebar*/
+function bar() {
+  let getvalue = rangevalue.value;
+  setvalue.innerHTML = this.value;
 
+  // COLOR CHANGING METHOD START..
+  var value = ((this.value - this.min) / (this.max - this.min)) * 100;
+  this.style.background =
+    "linear-gradient(to right, #357176 " +
+    value +
+    "%, red " +
+    value +
+    "% , #D1E1E4 " +
+    value +
+    "%)";
+  getvalue.innerHTML = this.value;
+  // COLOR CHANGING METHOD END...
 
+  if (getvalue > 3 && getvalue < 16) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_002.jpg"
+    );
+  } else if (getvalue >= 17 && getvalue <= 33) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_003.jpg"
+    );
+  } else if (getvalue >= 34 && getvalue <= 49) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_005.jpg"
+    );
+  } else if (getvalue >= 50 && getvalue <= 66) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_006.jpg"
+    );
+  } else if (getvalue >= 67 && getvalue <= 83) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_007.jpg"
+    );
+  } else if (getvalue >= 84 && getvalue <= 99) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_009.jpg"
+    );
+  } else if (getvalue === 100) {
+    imgchangevalue.setAttribute(
+      "src",
+      "./assets/image_part_012.jpg"
+    );
+  }
+};
+// bar();
 
-
-
-
-
-
-
-
-
-
+/*grid section*/
 for (let tab of tabs) {
   tab.addEventListener("click", gridFunction);
 }
@@ -131,19 +187,6 @@ function gridFunction(e) {
   this.querySelector(".productarrow").classList.add("active");
 }
 
-// for (let tab of tabArrows) {
-//   tab.addEventListener("click", arrowFunction);
-// }
-
-// function arrowFunction(e) {
-//   for (let tab of tabContent) {
-//     tab.style.display = "none";
-//   }
-//   // console.log(`.productStylesGrid-${this.dataset.tabId}`);
-//   let activeTab = document.querySelector(`.productTabs__tabs-${this.dataset.tabId}`)
-//   activeTab.style.display = "block";
-// }
-
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
@@ -151,6 +194,8 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
+/*video-player*/
 
 // progressbar-section
 
